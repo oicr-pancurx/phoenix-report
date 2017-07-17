@@ -501,8 +501,8 @@ sub printDsbrScore
 		"dsbr_delsv_ratio" => "100-10kbp Deletion Ratio >",
 		"dsbr_dup_load" => "10k-1mbp Duplication Load >",
 		"dsbr_sv_load" => "Structural Variant Load >",
-		"dsbr_first_gene" => "First Gene Hit(s)",
-		"dsbr_second_gene" => "Second Gene Hit(s)"
+		"dsbr_first_genes" => "First Gene Hit(s)",
+		"dsbr_second_genes" => "Second Gene Hit(s)"
 	);
 
 	my %tableCell;
@@ -539,7 +539,7 @@ sub printDsbrScore
 		}
 	}
 
-	for my $type (qw/dsbr_first_gene dsbr_second_gene/)
+	for my $type (qw/dsbr_first_genes dsbr_second_genes/)
 	{
 		if ($data->{$type} eq "")
 		{
@@ -568,10 +568,10 @@ sub printDsbrScore
 	print $html "<td>$tableCell{dsbr_del4_load}</td>\n<td>$tableCell{dsbr_dup_load}</td>\n";
 	print $html "</tr>\n";
 	print $html "<tr>\n";
-	print $html "<td>$tableCell{dsbr_del4_ratio}</td>\n<td>$tableCell{dsbr_first_gene}</td>\n";
+	print $html "<td>$tableCell{dsbr_del4_ratio}</td>\n<td>$tableCell{dsbr_first_genes}</td>\n";
 	print $html "</tr>\n";
 	print $html "<tr>\n";
-	print $html "<td>$tableCell{dsbr_sv_load}</td>\n<td>$tableCell{dsbr_second_gene}</td>\n";
+	print $html "<td>$tableCell{dsbr_sv_load}</td>\n<td>$tableCell{dsbr_second_genes}</td>\n";
 	print $html "</tr>\n";
 
 	print $html "</table>\n";
@@ -587,8 +587,8 @@ sub printMmrScore
 	my %niceName = (
 		"mmr_snv_load" => "SNV Load >",
 		"mmr_indel_load" => "Indel Load >",
-		"mmr_first_gene" => "First Gene Hit(s)",
-		"mmr_second_gene" => "Second Gene Hit(s)"
+		"mmr_first_genes" => "First Gene Hit(s)",
+		"mmr_second_genes" => "Second Gene Hit(s)"
 	);
 
 	my %tableCell;
@@ -608,7 +608,7 @@ sub printMmrScore
 		}
 	}
 
-	for my $type (qw/mmr_first_gene mmr_second_gene/)
+	for my $type (qw/mmr_first_genes mmr_second_genes/)
 	{
 		if ($data->{$type} eq "")
 		{
@@ -628,10 +628,10 @@ sub printMmrScore
 
 	print $html "<table style=\"width:100%\">\n";
 	print $html "<tr>\n";
-	print $html "<td>$tableCell{mmr_snv_load}</td>\n<td>$tableCell{mmr_first_gene}</td>\n";
+	print $html "<td>$tableCell{mmr_snv_load}</td>\n<td>$tableCell{mmr_first_genes}</td>\n";
 	print $html "</tr>\n";
 	print $html "<tr>\n";
-	print $html "<td>$tableCell{mmr_indel_load}</td>\n<td>$tableCell{mmr_second_gene}</td>\n";
+	print $html "<td>$tableCell{mmr_indel_load}</td>\n<td>$tableCell{mmr_second_genes}</td>\n";
 	print $html "</tr>\n";
 	print $html "</table>\n";
 
