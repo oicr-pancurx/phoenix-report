@@ -649,10 +649,10 @@ sub printSlideTwo
 
 
 	print $html "<table style=\"width:15%;height:68%;float:left;clear:left\">\n";
-	print $html "<tr><td style=\"text-align:center\"><b>$snvText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-snv_count-240.png\" style=\"width:100%\"></td></tr>\n";
-	print $html "<tr><td style=\"text-align:center\"><b>$indelText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-indel_count-240.png\" style=\"width:100%\"></td></tr>\n";
-	print $html "<tr><td style=\"text-align:center\"><b>$svText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-sv_count-240.png\" style=\"width:100%\"></td></tr>\n";
-	print $html "<tr><td style=\"text-align:center\"><b>$neoText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-neo_antigens-240.png\" style=\"width:100%\"></td></tr>\n";
+	print $html "<tr><td style=\"text-align:center\"><b>$snvText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-density-snv_count-240.png\" style=\"width:100%\"></td></tr>\n";
+	print $html "<tr><td style=\"text-align:center\"><b>$indelText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-density-indel_count-240.png\" style=\"width:100%\"></td></tr>\n";
+	print $html "<tr><td style=\"text-align:center\"><b>$svText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-density-sv_count-240.png\" style=\"width:100%\"></td></tr>\n";
+	print $html "<tr><td style=\"text-align:center\"><b>$neoText</b><br><img src=\"$data->{plot_dir}/$data->{tumour}-density-neo_antigens-240.png\" style=\"width:100%\"></td></tr>\n";
 
 	print $html "</table>\n";
 
