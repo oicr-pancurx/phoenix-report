@@ -38,7 +38,7 @@ my %histVals;
 my %histCols;
 
 
-my $historyFile = "/.mounts/labs/PCSI/users/rdenroche/phoenixReporter/pdac_20160805_matrix.csv";
+my $historyFile = "/.mounts/labs/PCSI/users/rdenroche/phoenixReporter/pdac_20170926_matrix.csv";
 ## read file for population numbers
 my %history;
 my @historySamps;
@@ -102,6 +102,27 @@ my %denseMax = (
 	"indel_count" => 5000,
 	"sv_count"=> 500,
 	"neo_antigens" => 200,
+);
+
+my %valuePos = (
+	"snv_count" => $snvCount,
+	"indel_count" => $indelCount,
+	"sv_count"=> $svCount,
+	"neo_antigens" => $neoCount,
+);
+
+my %boxRange = (
+    "snv_count" => "c(0,20000)",
+    "indel_count" => "c(0,2000)",
+    "sv_count" => "c(0,400)",
+    "neo_antigens" => "c(0,200)",
+);
+
+my %histBreaks = (
+	"snv_count" => 500,
+	"indel_count" => 5000,
+	"sv_count"=> 50,
+	"neo_antigens" => 500,
 );
 
 
@@ -209,6 +230,20 @@ for my $type (qw/snv_count indel_count sv_count neo_antigens/)
     print $rfile "dev.off()\n";
 
     print $rfile "\n";
+
+
+	# plot hist + boxplots
+	print $rfile "png(\"$fileName-histbox-${type}-240.png\",width=240,height=100)\n";
+	print $rfile "par(mar=c(0,1,0,1)+0.1,fig=c(0,1,0.5,1))\n";
+	print $rfile "hist($type, xlim=$boxRange{$type},breaks=$histBreaks{$type},axes=F,xaxs=\"i\", yaxs=\"i\",ylab=NA,xlab=NA,main=NA, col=\"$histColours{$type}\",border=NA)\n";
+	print $rfile "par(mar=c(2,1,0,1)+0.1,fig=c(0,1,0,0.54),new=T)\n";
+	print $rfile "boxplot($type, horizontal=T, ylim=$boxRange{$type}, col=\"$histColours{$type}\", xaxs=\"i\", yaxs=\"i\", frame=F,width=1, cex.axis=0.8,pch=20,cex=0.8)\n";
+	print $rfile "points($valuePos{$type},1,cex=2,pch=4)\n";
+	print $rfile "par(mar=c(2,1,0,1)+0.1,fig=c(0,1,0,1),new=T)\n";
+	print $rfile "plot(c(0,1),xlim=$boxRange{$type},type=\"n\",axes=F,xaxs=\"i\", yaxs=\"i\")\n";
+	print $rfile "abline(v=$valuePos{$type},lwd=2)\n";
+	print $rfile "dev.off()\n";
+	print $rfile "\n";
 
 
 
