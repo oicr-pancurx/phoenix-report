@@ -909,10 +909,10 @@ sub printMutationLoad
 #	print $html "<td style=\"text-align:center\"><b>$data->{neo_antigens} Neo-antigens (%PR)</b></td>";
 	print $html "</tr>\n";
 	print $html "<tr>\n";
-	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-snv_count-240.png\" style=\"width:100%\"></td>";
-	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-indel_count-240.png\" style=\"width:100%\"></td>";
-	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-sv_count-240.png\" style=\"width:100%\"></td>";
-	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histogram-neo_antigens-240.png\" style=\"width:100%\"></td>";
+	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histbox-snv_count-240.png\" style=\"width:100%\"></td>";
+	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histbox-indel_count-240.png\" style=\"width:100%\"></td>";
+	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histbox-sv_count-240.png\" style=\"width:100%\"></td>";
+	print $html "<td style=\"text-align:center\"><img src=\"$data->{plot_dir}/$data->{tumour}-histbox-neo_antigens-240.png\" style=\"width:100%\"></td>";
 	print $html "</tr>\n";
 	print $html "</table>\n";
 	
