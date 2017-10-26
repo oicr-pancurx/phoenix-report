@@ -154,6 +154,7 @@ my %limsTissue = (
 	"Ov" => "Ovary",
 	"Pa" => "Pancreas",
 	"Pb" => "peripheral blood",
+	"Pm" => "Peritoneum",
 	"Pr" => "Prostate",
 	"Sa" => "Saliva",
 	"Sg" => "Salivary Gland",
